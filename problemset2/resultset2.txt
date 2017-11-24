@@ -1,0 +1,74 @@
+1.Write a valid SQL statement that calculates the total weight of all corn cobs that were picked from the garden: 
+
+SUM(PI.WEIGHT)
+17.54
+
+2.For some reason Erin has change his location for picking the tomato to North. Write the corresponding query. 
+
+PLANTFK 	GARDENERFK 	LOCATIONFK 	DATE1 		AMOUNT 	WEIGHT
+0 		2 		0 	2012-08-18T00:00:00Z 	28 	2.32
+0 		3 		1 	2012-08-16T00:00:00Z 	12 	1.02
+2 		1 		3 	2012-08-22T00:00:00Z 	52 	12.96
+2 		2 		2 	2012-08-28T00:00:00Z 	18 	4.58
+3 		3 		1 	2012-08-22T00:00:00Z 	15 	3.84
+4 		2 		0 	2012-07-16T00:00:00Z 	23 	0.52
+
+
+3.Insert a new column 'Exper' of type Number (30) to the 'gardener' table which stores  Experience of the of person. How will you modify this to varchar2(30). 
+
+alter table Gardener add exper number(30);
+alter table Gardener modify exper varchar2(30);
+select * from Gardener;
+
+4. Write a query to find the plant name which required seeds less than 20 which plant on 14-APR 
+
+NAME
+Carrot
+
+5.List the amount of sunlight and water to all plants with names that start with letter  'c' or letter 'r'. 
+
+NAME 	SUNLIGHT 	WATER
+Carrot 	0.26 		0.82
+Corn 	0.44 		0.76
+Radish 	0.28 		0.84
+
+6. Write a valid SQL statement that displays the plant name and  the total amount of seed required for each plant that were plant in the garden. The output should be in descending order of plant name. 
+
+NAME 	SUM(PL.SEEDS)
+Tomato 	38
+Radish 	30
+Lettuce 30
+Corn 	32
+Carrot 	42
+Beet 	36
+
+7.Write a valid SQL statement that calculates the average number of items produced per seed planted for each plant type:( (Average number of items = total amount picked / total seeds planted.) 
+
+PLANTFK	AVERAGE
+2	2.1875
+4	0.7666666666666667
+3	0.39473684210526316
+0	0.9523809523809523
+
+8. Write a valid SQL statement that would produce a result set like the following: 
+
+        name |  name  |    date    | amount 
+       ------+--------+------------+-------- 
+        Tim  | Radish | 2012-07-16 |     23 
+        Tim  | Carrot | 2012-08-18 |     28 
+
+9. Find out persons who picked from the same location as he/she planted. 
+
+NAME
+Father
+Tim
+Erin
+
+
+10.Create a view that lists all the plant names picked from all locations except ’West’ in the month of August. 
+
+
+NAME
+Corn
+Tomato
+Carrot
